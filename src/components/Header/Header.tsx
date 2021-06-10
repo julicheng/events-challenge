@@ -1,6 +1,7 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import blacklogo from '../../assets/blacklogo.png';
 import whitelogo from '../../assets/whitelogo.png';
+import DarkModeToggle from 'react-dark-mode-toggle';
 
 export default function Header() {
   const [logo, setLogo] = useState(
@@ -20,14 +21,17 @@ export default function Header() {
   }, [localStorage.theme]);
 
   return (
-    <header className='bg-white dark:bg-gray-900 shadow-md'>
-      <div className='flex justify-center pt-10 pb-6'>
+    <header className='bg-white dark:bg-gray-900 shadow-md flex flex-col'>
+      {/* <div> */}
+      <DarkModeToggle
+        onChange={handleOnClick}
+        size='50'
+        checked={localStorage.getItem('theme') === 'dark'}
+        className='m-3 self-end'
+      />
+      {/* </div> */}
+      <div className='flex justify-center  pb-10'>
         <img src={logo} alt='logo' className='w-60' />
-      </div>
-      <div>
-        <button className='dark:text-red-400' onClick={handleOnClick}>
-          toggle
-        </button>
       </div>
     </header>
   );
