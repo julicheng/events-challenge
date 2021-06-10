@@ -14,7 +14,7 @@ const getArtist = async (id: string) => {
     url: `${path}/${id}`,
     params: { api_key: API_KEY },
   });
-  return res;
+  return res.data.results;
 };
 
 export default {

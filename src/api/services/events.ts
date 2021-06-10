@@ -7,15 +7,16 @@ const path = 'events';
  * Get events by keyword
  *
  * @param keyword to search
+ * @param offset record to start at
  * @returns
  */
-const getEventsByKeyword = async (keyword: string) => {
+const getEventsByKeyword = async (keyword: string, offset?: number) => {
   const res = await api.request({
     method: 'GET',
     url: `${path}/search`,
-    params: { keyword, api_key: API_KEY },
+    params: { keyword, api_key: API_KEY, offset },
   });
-  return res;
+  return res.data;
 };
 
 /**
@@ -30,7 +31,7 @@ const getEventDetails = async (id: string) => {
     url: `${path}/${id}`,
     params: { api_key: API_KEY },
   });
-  return res;
+  return res.data.results;
 };
 
 export default {
