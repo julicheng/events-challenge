@@ -22,14 +22,12 @@ export default function Header() {
 
   return (
     <header className='bg-white dark:bg-gray-900 shadow-md flex flex-col'>
-      {/* <div> */}
       <DarkModeToggle
         onChange={handleOnClick}
         size='50'
         checked={localStorage.getItem('theme') === 'dark'}
         className='m-3 self-end'
       />
-      {/* </div> */}
       <div className='flex justify-center  pb-10'>
         <img src={logo} alt='logo' className='w-60' />
       </div>
