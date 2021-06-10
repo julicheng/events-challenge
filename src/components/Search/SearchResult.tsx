@@ -29,7 +29,7 @@ export default function SearchResult({
   }, [history, id]);
 
   return (
-    <div className='rounded m-6 p-5 bg-white shadow-md w-60 dark:bg-gray-700'>
+    <div className='rounded m-6 p-5 bg-white shadow-md w-8/12 md:w-60 dark:bg-gray-700'>
       <div className='flex flex-col h-full justify-around'>
         <img src={largeimageurl} alt={eventname} className='rounded' />
         <p className='pt-4 pb-1 text-center text-md dark:text-gray-200'>
