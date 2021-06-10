@@ -1,15 +1,16 @@
 import { CalendarIcon, LocationMarkerIcon } from '@heroicons/react/outline';
 import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+import { venueProps } from '../Event/Event';
 import InfoIcon from '../InfoIcon';
 
-interface Props {
+export interface SearchResultProps {
   eventname: string;
   largeimageurl: string;
   description: string;
   id: string;
   date: string;
-  venue: any;
+  venue: venueProps;
 }
 
 export default function SearchResult({
@@ -19,9 +20,10 @@ export default function SearchResult({
   id,
   date,
   venue,
-}: Props) {
+}: SearchResultProps) {
   const history = useHistory();
 
+  // Handles button click
   const handleClick = useCallback(() => {
     history.push(`event/${id}`);
   }, [history, id]);

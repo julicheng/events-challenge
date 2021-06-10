@@ -1,15 +1,17 @@
 import { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
-interface Props {
+export interface ArtistProps {
   artistid: string;
   image: string;
   name: string;
 }
 
-export default function Artist({ artistid, image, name }: Props) {
+export default function Artist({ artistid, image, name }: ArtistProps) {
   const history = useHistory();
 
+  // Clicking on the div of the artist will
+  // link to artists page
   const handleClick = useCallback(() => {
     history.push(`/artist/${artistid}`);
   }, [history, artistid]);
@@ -20,7 +22,7 @@ export default function Artist({ artistid, image, name }: Props) {
       onClick={handleClick}
     >
       <div className='flex flex-col h-full justify-around'>
-        <img src={image} alt={name} className='rounded' />
+        <img src={image} alt={name} className='rounded w-52 h-52' />
         <p className='text-center mt-3'>{name}</p>
       </div>
     </div>

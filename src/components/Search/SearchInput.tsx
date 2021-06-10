@@ -1,6 +1,8 @@
+import { ChangeEvent, FormEvent } from 'react';
+
 interface Props {
-  handleSubmit: any;
-  handleOnChange: any;
+  handleSubmit: (e: FormEvent) => void;
+  handleOnChange: (e: ChangeEvent) => void;
   keyword: string;
 }
 export default function SearchInput({

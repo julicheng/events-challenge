@@ -11,20 +11,29 @@ export default function SearchContainer() {
   const [message, setMessage] = useState('');
   const [pagesRemaining, setPagesRemaining] = useState(0);
 
+  /**
+   * Gets all the events with the associated
+   * search term
+   */
   const getEvents = useCallback(async (keyword: string) => {
     try {
       const { results, totalcount, pagecount } =
         await api.events.getEventsByKeyword(keyword);
+      // State for displaying message above results
       !results.length
         ? setMessage(`No results were found for '${keyword}'`)
         : setMessage(`${totalcount} results were found for '${keyword}'`);
       setResults(results);
+      // Counts how many pages are still available to paginate
       setPagesRemaining(Math.ceil(totalcount / pagecount) - 1);
     } catch (e) {
       console.error(e);
     }
   }, []);
 
+  /**
+   * Handles submit
+   */
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
@@ -33,10 +42,17 @@ export default function SearchContainer() {
     [keyword, getEvents]
   );
 
+  /**
+   *  Updates keyword change
+   */
   const onChange = useCallback((e) => {
     setKeyword(e.currentTarget.value);
   }, []);
 
+  /**
+   * Handles pagination by calling endpoind
+   * and padding in the offset of where last result is
+   */
   const handlePaginate = useCallback(async () => {
     try {
       const res = await api.events.getEventsByKeyword(keyword, results.length);
@@ -56,6 +72,7 @@ export default function SearchContainer() {
         keyword={keyword}
       />
       <SearchResults results={results} message={message} />
+      {/* Only displays button when pages are available to paginate */}
       {pagesRemaining > 0 ? (
         <PaginateButton handleClick={handlePaginate} />
       ) : null}

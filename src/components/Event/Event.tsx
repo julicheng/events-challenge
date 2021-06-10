@@ -7,8 +7,28 @@ import {
 import React from 'react';
 import InfoIcon from '../InfoIcon';
 
+type openingTimesProps = {
+  doorsopen: string;
+  doorsclose: string;
+};
+
+export type venueProps = {
+  name: string;
+  town: string;
+};
+
+export interface EventProps {
+  largeimageurl: string;
+  venue: venueProps;
+  date: string;
+  entryprice: string;
+  eventname: string;
+  description: string;
+  openingtimes: openingTimesProps;
+}
+
 interface Props {
-  event: any;
+  event: EventProps;
 }
 
 export default function Event({ event }: Props) {

@@ -1,5 +1,5 @@
 interface Props {
-  handleClick: any;
+  handleClick: () => void;
 }
 
 export default function PaginateButton({ handleClick }: Props) {

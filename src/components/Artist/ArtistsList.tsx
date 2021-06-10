@@ -1,8 +1,8 @@
 import React from 'react';
-import Artist from './Artist';
+import Artist, { ArtistProps } from './Artist';
 
 interface Props {
-  artists: any;
+  artists: ArtistProps[];
 }
 
 export default function ArtistsList({ artists }: Props) {
@@ -14,7 +14,7 @@ export default function ArtistsList({ artists }: Props) {
         <div className='flex flex-wrap w-full justify-center items-center'>
           {artists.length
             ? artists.map((artist: any) => {
-                return <Artist key={artist.id} {...artist} />;
+                return <Artist key={artist.artistid} {...artist} />;
               })
             : null}
         </div>

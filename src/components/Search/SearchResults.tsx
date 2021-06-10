@@ -1,7 +1,7 @@
-import SearchResult from './SearchResult';
+import SearchResult, { SearchResultProps } from './SearchResult';
 
 interface Props {
-  results: any[];
+  results: SearchResultProps[];
   message: string;
 }
 
