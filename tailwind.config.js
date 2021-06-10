@@ -1,5 +1,10 @@
 module.exports = {
-  purge: [],
+  purge: [
+    './src/components/**/*.{js,jsx,ts,tsx}',
+    './src/containers/**/*.{js,jsx,ts,tsx}',
+    './src/App.tsx',
+    './public/index.html',
+  ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     fontFamily: {
