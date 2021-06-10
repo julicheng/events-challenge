@@ -1,20 +1,16 @@
 import { ChangeEvent, FormEvent } from 'react';
 
 interface Props {
-  handleSubmit: (e: FormEvent) => void;
-  handleOnChange: (e: ChangeEvent) => void;
+  onSubmit: (e: FormEvent) => void;
+  onChange: (e: ChangeEvent) => void;
   keyword: string;
 }
-export default function SearchInput({
-  handleSubmit,
-  handleOnChange,
-  keyword,
-}: Props) {
+export default function SearchInput({ onSubmit, onChange, keyword }: Props) {
   return (
-    <form onSubmit={handleSubmit} className='flex justify-center p-9'>
+    <form onSubmit={onSubmit} className='flex justify-center p-9'>
       <input
         value={keyword}
-        onChange={handleOnChange}
+        onChange={onChange}
         type='search'
         placeholder='Search for events'
         className='dark:text-gray-200 dark:bg-gray-600 border shadow border-transparent rounded p-2 w-10/12 md:w-6/12 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent mr-2'

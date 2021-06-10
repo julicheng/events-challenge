@@ -66,16 +66,10 @@ export default function SearchContainer() {
 
   return (
     <Layout search={false}>
-      <SearchInput
-        handleSubmit={onSubmit}
-        handleOnChange={onChange}
-        keyword={keyword}
-      />
+      <SearchInput onSubmit={onSubmit} onChange={onChange} keyword={keyword} />
       <SearchResults results={results} message={message} />
       {/* Only displays button when pages are available to paginate */}
-      {pagesRemaining > 0 ? (
-        <PaginateButton handleClick={handlePaginate} />
-      ) : null}
+      {pagesRemaining > 0 ? <PaginateButton onClick={handlePaginate} /> : null}
     </Layout>
   );
 }
