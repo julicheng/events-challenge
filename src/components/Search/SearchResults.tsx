@@ -7,7 +7,7 @@ interface Props {
 
 export default function SearchResults({ results, message }: Props) {
   return (
-    <div className='flex justify-center flex-col'>
+    <div className='flex justify-center flex-col pb-8'>
       <p className='text-center mb-3 dark:text-gray-300'>{message}</p>
       <div className='flex flex-wrap w-12/12 md:w-10/12 mx-auto justify-around flex-auto'>
         {results.length
