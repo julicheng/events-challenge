@@ -3,9 +3,9 @@ import {
   ClockIcon,
   LocationMarkerIcon,
   TicketIcon,
-  SearchCircleIcon,
 } from '@heroicons/react/outline';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import InfoIcon from '../InfoIcon';
 import Artist from './Artist';
 
 interface Props {
@@ -33,26 +33,22 @@ export default function Event({ event }: Props) {
         <div className='w-12/12 mt-5 md:ml-5 md:w-8/12 md:mt-0 text-gray-600'>
           <h1 className='text-2xl text-black'>{eventname}</h1>
           <p className='py-4'>{description}</p>
-          <div className='flex py-1 items-center'>
-            <LocationMarkerIcon className='h-5 w-5 mr-3' />
-            <p className='text-xs w-5/6'>
-              {venue.name}, {venue.town}
-            </p>
-          </div>
-          <div className='flex py-1 items-center'>
-            <CalendarIcon className='h-5 w-5 mr-3' />
-            <p className='text-xs w-5/6'>{date}</p>
-          </div>
-          <div className='flex py-1 items-center'>
-            <ClockIcon className='h-5 w-5 mr-3' />
-            <p className='text-xs w-5/6'>
-              {`${openingtimes.doorsopen} - ${openingtimes.doorsclose}`}
-            </p>
-          </div>
-          <div className='flex py-1 items-center'>
-            <TicketIcon className='h-5 w-5 mr-3' />
-            <p className='text-xs w-5/6'>{entryprice}</p>
-          </div>
+          <InfoIcon
+            icon={<LocationMarkerIcon className='h-5 w-5 mr-3' />}
+            text={`${venue.name}, ${venue.town}`}
+          />
+          <InfoIcon
+            icon={<CalendarIcon className='h-5 w-5 mr-3' />}
+            text={date}
+          />
+          <InfoIcon
+            icon={<ClockIcon className='h-5 w-5 mr-3' />}
+            text={`${openingtimes.doorsopen} - ${openingtimes.doorsclose}`}
+          />
+          <InfoIcon
+            icon={<TicketIcon className='h-5 w-5 mr-3' />}
+            text={entryprice}
+          />
         </div>
       </div>
       <hr className='my-8' />

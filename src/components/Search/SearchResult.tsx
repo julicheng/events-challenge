@@ -1,6 +1,7 @@
 import { CalendarIcon, LocationMarkerIcon } from '@heroicons/react/outline';
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
+import InfoIcon from '../InfoIcon';
 
 interface Props {
   eventname: string;
@@ -36,16 +37,14 @@ export default function SearchResult({
             : description}
         </p>
         <div className='py-2 text-gray-600'>
-          <div className='flex py-2'>
-            <LocationMarkerIcon className='h-5 w-5 mr-3' />
-            <p className='text-xs w-5/6'>
-              {venue.name}, {venue.town}
-            </p>
-          </div>
-          <div className='flex py-2 text-gray-600'>
-            <CalendarIcon className='h-5 w-5 mr-3' />
-            <p className='text-xs'>{date}</p>
-          </div>
+          <InfoIcon
+            icon={<LocationMarkerIcon className='h-5 w-5 mr-3' />}
+            text={`${venue.name}, ${venue.town}`}
+          />
+          <InfoIcon
+            icon={<CalendarIcon className='h-5 w-5 mr-3' />}
+            text={date}
+          />
         </div>
         <div className='pt-3'>
           <button
