@@ -2,7 +2,7 @@ module.exports = {
   purge: [
     './src/components/**/*.{js,jsx,ts,tsx}',
     './src/containers/**/*.{js,jsx,ts,tsx}',
-    './src/App.tsx',
+    './src/*.{js,jsx,ts,tsx}',
     './public/index.html',
   ],
   darkMode: 'class', // or 'media' or 'class'
