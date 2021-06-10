@@ -18,12 +18,12 @@ export default function Artist({ artistid, image, name }: ArtistProps) {
 
   return (
     <div
-      className='rounded m-4 p-5 bg-gray-100 shadow-md w-60 cursor-pointer'
+      className='rounded m-4 p-5 bg-gray-100 shadow-md w-60 cursor-pointer dark:bg-gray-700'
       onClick={handleClick}
     >
       <div className='flex flex-col h-full justify-around'>
         <img src={image} alt={name} className='rounded w-52 h-52' />
-        <p className='text-center mt-3'>{name}</p>
+        <p className='text-center mt-3 dark:text-gray-300'>{name}</p>
       </div>
     </div>
   );

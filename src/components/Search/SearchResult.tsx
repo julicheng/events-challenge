@@ -29,16 +29,18 @@ export default function SearchResult({
   }, [history, id]);
 
   return (
-    <div className='rounded m-6 p-5 bg-white shadow-md w-60'>
+    <div className='rounded m-6 p-5 bg-white shadow-md w-60 dark:bg-gray-700'>
       <div className='flex flex-col h-full justify-around'>
         <img src={largeimageurl} alt={eventname} className='rounded' />
-        <p className='pt-4 pb-1 text-center text-md'>{eventname}</p>
-        <p className='py-2 text-sm text-gray-600'>
+        <p className='pt-4 pb-1 text-center text-md dark:text-gray-200'>
+          {eventname}
+        </p>
+        <p className='py-2 text-sm text-gray-600 dark:text-gray-300'>
           {description.length > 60
             ? `${description.substring(0, 60)}...`
             : description}
         </p>
-        <div className='py-2 text-gray-600'>
+        <div className='py-2 text-gray-600 dark:text-gray-300'>
           <InfoIcon
             icon={<LocationMarkerIcon className='h-5 w-5 mr-3' />}
             text={`${venue.name}, ${venue.town}`}
@@ -50,7 +52,7 @@ export default function SearchResult({
         </div>
         <div className='pt-3'>
           <button
-            className='rounded bg-black w-full text-white p-2 hover:bg-gray-700'
+            className='rounded bg-black w-full text-white p-2 hover:bg-gray-700 dark:hover:bg-gray-800'
             onClick={handleClick}
           >
             view details

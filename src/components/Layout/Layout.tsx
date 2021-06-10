@@ -9,12 +9,12 @@ interface Props {
 
 export default function Layout({ children, search = true }: Props) {
   return (
-    <div className='bg-gray-200 min-h-full min-w-full'>
+    <div className='bg-gray-200 min-h-full min-w-full dark:bg-gray-800'>
       {search ? (
         <div className='p-3 flex flex-col'>
           <Link
             to='/'
-            className='mx-auto mt-2 flex items-center hover:text-gray-600'
+            className='mx-auto mt-2 flex items-center hover:text-gray-600 dark:text-gray-300'
           >
             <SearchCircleIcon className='h-5 w-5 mr-1' /> back to search
           </Link>

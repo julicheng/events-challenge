@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../Layout';
 
 export default function Loading() {
   return (
-    <div className='text-center my-10'>
-      <p>Loading...</p>
-    </div>
+    <Layout search={false}>
+      <p className='dark:text-gray-300 text-center p-5'>Loading...</p>
+    </Layout>
   );
 }
