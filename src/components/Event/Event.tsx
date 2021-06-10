@@ -6,7 +6,6 @@ import {
 } from '@heroicons/react/outline';
 import React from 'react';
 import InfoIcon from '../InfoIcon';
-import Artist from './Artist';
 
 interface Props {
   event: any;
@@ -14,7 +13,6 @@ interface Props {
 
 export default function Event({ event }: Props) {
   const {
-    artists,
     largeimageurl,
     venue,
     date,
@@ -49,17 +47,6 @@ export default function Event({ event }: Props) {
             icon={<TicketIcon className='h-5 w-5 mr-3' />}
             text={entryprice}
           />
-        </div>
-      </div>
-      <hr className='my-8' />
-      <div>
-        <h2 className='text-xl text-center mb-5'>Artists</h2>
-        <div className='flex flex-wrap w-full justify-center items-center'>
-          {artists.length
-            ? artists.map((artist: any) => {
-                return <Artist key={artist.id} {...artist} />;
-              })
-            : null}
         </div>
       </div>
     </div>

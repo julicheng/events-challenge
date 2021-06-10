@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '../../components/Layout';
-import { ArtistDetails } from '../../components/ArtistDetails';
+import { ArtistDetails } from '../../components/Artist';
 import PageNotFound from '../../components/PageNotFound/PageNotFound';
 import api from '../../api';
 import Loading from '../../components/Loading';

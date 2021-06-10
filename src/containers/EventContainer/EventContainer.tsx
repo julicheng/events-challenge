@@ -5,16 +5,19 @@ import { Event } from '../../components/Event';
 import PageNotFound from '../../components/PageNotFound/PageNotFound';
 import api from '../../api';
 import Loading from '../../components/Loading';
+import ArtistsList from '../../components/Artist/ArtistsList';
 
 export default function EventContainer() {
   const { id }: { id: string } = useParams();
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [artists, setArtists] = useState([]);
 
   const getEvent = useCallback(async () => {
     try {
       const res = await api.events.getEventDetails(id);
       setEvent(res);
+      setArtists(res.artists);
       setLoading(false);
     } catch (e) {
       console.error(e);
@@ -33,6 +36,8 @@ export default function EventContainer() {
   return (
     <Layout>
       <Event event={event} />
+
+      {artists.length ? <ArtistsList artists={artists} /> : null}
     </Layout>
   );
 }
