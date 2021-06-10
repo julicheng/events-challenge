@@ -1,37 +1,22 @@
-import { useCallback, useEffect } from 'react';
-import api from './api';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ArtistContainer from './containers/ArtistContainer';
+import EventContainer from './containers/EventContainer';
+import SearchContainer from './containers/SearchContainer';
+import Header from './components/Header';
+import PageNotFound from './components/PageNotFound/PageNotFound';
 
 function App() {
-  const test = useCallback(async () => {
-    try {
-      const res = await api.artist.getArtist('123494864');
-      console.log(res);
-    } catch (e) {
-      console.error(e);
-    }
-  }, []);
-
-  useEffect(() => {
-    test();
-  }, [test]);
-
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='w-screen h-screen'>
+      <Header />
+      <Router>
+        <Switch>
+          <Route exact path='/' component={SearchContainer} />
+          <Route exact path='/event/:id' component={EventContainer} />
+          <Route exact path='/artist/:id' component={ArtistContainer} />
+          <Route path='/' component={PageNotFound} />
+        </Switch>
+      </Router>
     </div>
   );
 }
