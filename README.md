@@ -1,6 +1,8 @@
 # Events Challenge
 
-This is an events search app built using React. It uses the skiddle API to fetch events returned by the search term entered.
+This is an events search app built using ReactJS. It uses the [Skiddle API](https://github.com/Skiddle/web-api) to fetch events returned by the search term entered.
+
+[Live demo link](https://events-challenge-153068.netlify.app/)
 
 ## Features
 
