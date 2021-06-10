@@ -49,7 +49,7 @@ export default function SearchContainer() {
   }, [keyword, results, pagesRemaining]);
 
   return (
-    <Layout>
+    <Layout search={false}>
       <SearchInput
         handleSubmit={onSubmit}
         handleOnChange={onChange}
