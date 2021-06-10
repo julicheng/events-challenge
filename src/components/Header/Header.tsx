@@ -18,7 +18,7 @@ export default function Header() {
       localStorage.theme = 'dark';
       setLogo(whitelogo);
     }
-  }, [localStorage.theme]);
+  }, []);
 
   return (
     <header className='bg-white dark:bg-gray-900 shadow-md flex flex-col'>

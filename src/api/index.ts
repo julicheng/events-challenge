@@ -2,7 +2,9 @@
 import events from './services/events';
 import artist from './services/artist';
 
-export default {
+const endpoints = {
   events,
   artist,
 };
+
+export default endpoints;

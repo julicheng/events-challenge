@@ -17,6 +17,7 @@ const getArtist = async (id: string) => {
   return res.data.results;
 };
 
-export default {
+const artistEndpoints = {
   getArtist,
 };
+export default artistEndpoints;

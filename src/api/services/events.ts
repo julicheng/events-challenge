@@ -34,7 +34,9 @@ const getEventDetails = async (id: string) => {
   return res.data.results;
 };
 
-export default {
+const eventEndpoints = {
   getEventsByKeyword,
   getEventDetails,
 };
+
+export default eventEndpoints;
