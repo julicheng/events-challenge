@@ -5,9 +5,9 @@ This is an events search app built using React. It uses the skiddle API to fetch
 ## Features
 
 1.  Search events on keyword
-2.  Event details
-3.  Artist details
-4.  Dark mode
+2.  Event details when clicking on an event
+3.  Artist details when clicking on an artist
+4.  Dark/light mode toggle
 
 ## How to run App
 
